@@ -61,12 +61,12 @@ check_cxx_source_compiles("
                           #include <array>
                           #include <string>
                           #include <charconv>
-                          
+
                           int main() {
                                   std::array<char, 7> str {};
                                   auto p = std::to_chars(str.data(), str.data() + str.size(), 12345).ptr;
                                   auto strResult = std::string(str.data(), p - str.data());
-                                  
+
                                   unsigned long value = 0;
                                   std::from_chars(strResult.data(), strResult.data() + strResult.size(), value);
 
@@ -103,6 +103,7 @@ set(OPENXLSX_SOURCES
         ${CMAKE_CURRENT_LIST_DIR}/sources/XLXmlData.cpp
         ${CMAKE_CURRENT_LIST_DIR}/sources/XLXmlFile.cpp
         ${CMAKE_CURRENT_LIST_DIR}/sources/XLZipArchive.cpp
+		${CMAKE_CURRENT_LIST_DIR}/sources/XLStyles.cpp
         )
 
 
